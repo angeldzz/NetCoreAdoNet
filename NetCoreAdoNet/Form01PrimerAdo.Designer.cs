@@ -68,6 +68,7 @@
             btnRead.TabIndex = 2;
             btnRead.Text = "READ";
             btnRead.UseVisualStyleBackColor = true;
+            btnRead.Click += btnRead_Click;
             // 
             // label1
             // 

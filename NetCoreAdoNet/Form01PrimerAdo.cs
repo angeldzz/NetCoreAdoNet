@@ -22,6 +22,12 @@ namespace NetCoreAdoNet
             this.conectionString = @"Data Source=""LOCALHOST \DEVELOPER"";Initial Catalog=HOSPITAL;Persist Security Info=True;User ID=SA;Trust Server Certificate=True";
             this.cn = new SqlConnection(this.conectionString);
             this.com = new SqlCommand();
+            this.cn.StateChange += Cn_StateChange;
+        }
+
+        private void Cn_StateChange(object sender, StateChangeEventArgs e)
+        {
+            this.lblConexion.Text = "La Conexion esta pasando de " + e.OriginalState + " a " + e.CurrentState;
         }
 
         private void btnConectar_Click(object sender, EventArgs e)
@@ -34,6 +40,10 @@ namespace NetCoreAdoNet
                 }
                 this.lblConexion.BackColor = Color.LightGreen;
             }
+            catch (SqlException exSql)
+            {
+                this.lblConexion.Text = "Error: " + exSql.ToString();
+            }
             catch (Exception ex)
             {
                 this.lblConexion.Text = "Error " + ex.ToString();
@@ -45,5 +55,29 @@ namespace NetCoreAdoNet
             this.cn.Close();
             this.lblConexion.BackColor = Color.LightCoral;
         }
+
+        private void btnRead_Click(object sender, EventArgs e)
+        {
+            //Para leer registros logicamente necesitamos la conexion Open();
+            string sql = "select * from EMP";
+            //Indicamos la conexion a utilizar
+            this.com.Connection = this.cn;
+            //Indicamos tipo de consulta a realizar
+            this.com.CommandType = CommandType.Text;
+            //Incluimos la consutla en el command
+            this.com.CommandText = sql;
+            //Aqui deberiamos abrir la conexion
+            //Ejecutar la consulta
+            //Utilizamos ExeuteReader() que devuelve un DataReader
+            this.reader = this.com.ExecuteReader();
+            //Leemos la primera columna de la tabla
+            string columna = this.reader.GetName(0);
+            //Leemos el tipo de dato de la primera columnaa
+            string tipo = this.reader.GetDataTypeName(0);
+            this.lstColumnas.Items.Add(columna);
+            this.lstTipos.Items.Add(tipo);
+            this.reader.Close();
+        }
     }
 }
+//Palomazo a la vista
