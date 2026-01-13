@@ -70,14 +70,24 @@ namespace NetCoreAdoNet
             //Ejecutar la consulta
             //Utilizamos ExeuteReader() que devuelve un DataReader
             this.reader = this.com.ExecuteReader();
-            //Leemos la primera columna de la tabla
-            string columna = this.reader.GetName(0);
-            //Leemos el tipo de dato de la primera columnaa
-            string tipo = this.reader.GetDataTypeName(0);
-            this.lstColumnas.Items.Add(columna);
-            this.lstTipos.Items.Add(tipo);
+            //Para la estructura de la tabla se utiliza for
+            for (int i = 0; i < this.reader.FieldCount; i++)
+            {
+                //Leemos la primera columna de la tabla
+                string columna = this.reader.GetName(i);
+                //Leemos el tipo de dato de la primera columnaa
+                string tipo = this.reader.GetDataTypeName(i);
+                this.lstColumnas.Items.Add(columna);
+                this.lstTipos.Items.Add(tipo);
+            }
+            while (this.reader.Read())
+            {
+                //Leemos simepre el primer registro(APELLIDO)
+
+                string apellido = this.reader["APELLIDO"].ToString();
+                this.lstApellidos.Items.Add(apellido);
+            }
             this.reader.Close();
         }
     }
 }
-//Palomazo a la vista
