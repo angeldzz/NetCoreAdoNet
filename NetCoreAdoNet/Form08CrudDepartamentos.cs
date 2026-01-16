@@ -28,9 +28,29 @@ namespace NetCoreAdoNet
                 lstDepartamentos.Items.Add($"{departamento.IdDepartamento} - {departamento.Nombre} - {departamento.Localidad}");
             }
         }
-        private void btnInsertar_Click(object sender, EventArgs e)
+        private async void btnInsertar_Click(object sender, EventArgs e)
         {
+            int id = int.Parse(this.txtId.Text);
+            string nombre = this.txtNombre.Text;
+            string localidad = this.txtLocalidad.Text;
+            await this.repo.CreateDepartamentosAsync(id,nombre,localidad);
+            await this.LoadDepartamentos();
+        }
 
+        private async void btnModificar_Click(object sender, EventArgs e)
+        {
+            int id = int.Parse(this.txtId.Text);
+            string nombre = this.txtNombre.Text;
+            string localidad = this.txtLocalidad.Text;
+            await this.repo.UpdateDepartamentosAsync(id, nombre, localidad);
+            await this.LoadDepartamentos();
+        }
+
+        private async void btnEliminar_Click(object sender, EventArgs e)
+        {
+            int id = int.Parse(this.txtId.Text);
+            await this.repo.DeleteDepartamentoAsync(id);
+            await this.LoadDepartamentos();
         }
     }
 }
