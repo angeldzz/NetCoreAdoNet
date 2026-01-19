@@ -1,0 +1,161 @@
+﻿namespace NetCoreAdoNet
+{
+    partial class Form12MensajesServidor
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            label1 = new Label();
+            label2 = new Label();
+            txtId = new TextBox();
+            txtNombre = new TextBox();
+            btnNuevoDepartamento = new Button();
+            txtLocalidad = new TextBox();
+            label3 = new Label();
+            label4 = new Label();
+            lstDepartamentos = new ListBox();
+            lblServidor = new Label();
+            SuspendLayout();
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(8, 9);
+            label1.Name = "label1";
+            label1.Size = new Size(17, 15);
+            label1.TabIndex = 0;
+            label1.Text = "Id";
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(8, 53);
+            label2.Name = "label2";
+            label2.Size = new Size(51, 15);
+            label2.TabIndex = 1;
+            label2.Text = "Nombre";
+            // 
+            // txtId
+            // 
+            txtId.Location = new Point(8, 27);
+            txtId.Name = "txtId";
+            txtId.Size = new Size(100, 23);
+            txtId.TabIndex = 2;
+            // 
+            // txtNombre
+            // 
+            txtNombre.Location = new Point(8, 71);
+            txtNombre.Name = "txtNombre";
+            txtNombre.Size = new Size(100, 23);
+            txtNombre.TabIndex = 3;
+            // 
+            // btnNuevoDepartamento
+            // 
+            btnNuevoDepartamento.Location = new Point(8, 144);
+            btnNuevoDepartamento.Name = "btnNuevoDepartamento";
+            btnNuevoDepartamento.Size = new Size(100, 51);
+            btnNuevoDepartamento.TabIndex = 4;
+            btnNuevoDepartamento.Text = "Nuevo Departamento";
+            btnNuevoDepartamento.UseVisualStyleBackColor = true;
+            btnNuevoDepartamento.Click += btnNuevoDepartamento_Click;
+            // 
+            // txtLocalidad
+            // 
+            txtLocalidad.Location = new Point(8, 115);
+            txtLocalidad.Name = "txtLocalidad";
+            txtLocalidad.Size = new Size(100, 23);
+            txtLocalidad.TabIndex = 6;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new Point(8, 97);
+            label3.Name = "label3";
+            label3.Size = new Size(58, 15);
+            label3.TabIndex = 5;
+            label3.Text = "Localidad";
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Location = new Point(135, 9);
+            label4.Name = "label4";
+            label4.Size = new Size(88, 15);
+            label4.TabIndex = 7;
+            label4.Text = "Departamentos";
+            // 
+            // lstDepartamentos
+            // 
+            lstDepartamentos.FormattingEnabled = true;
+            lstDepartamentos.Location = new Point(135, 27);
+            lstDepartamentos.Name = "lstDepartamentos";
+            lstDepartamentos.Size = new Size(288, 229);
+            lstDepartamentos.TabIndex = 8;
+            // 
+            // lblServidor
+            // 
+            lblServidor.AutoSize = true;
+            lblServidor.Location = new Point(8, 241);
+            lblServidor.Name = "lblServidor";
+            lblServidor.Size = new Size(63, 15);
+            lblServidor.TabIndex = 9;
+            lblServidor.Text = "lblServidor";
+            // 
+            // Form12MensajesServidor
+            // 
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(441, 274);
+            Controls.Add(lblServidor);
+            Controls.Add(lstDepartamentos);
+            Controls.Add(label4);
+            Controls.Add(txtLocalidad);
+            Controls.Add(label3);
+            Controls.Add(btnNuevoDepartamento);
+            Controls.Add(txtNombre);
+            Controls.Add(txtId);
+            Controls.Add(label2);
+            Controls.Add(label1);
+            Name = "Form12MensajesServidor";
+            Text = "Form12MensajesServidor";
+            ResumeLayout(false);
+            PerformLayout();
+        }
+
+        #endregion
+
+        private Label label1;
+        private Label label2;
+        private TextBox txtId;
+        private TextBox txtNombre;
+        private Button btnNuevoDepartamento;
+        private TextBox txtLocalidad;
+        private Label label3;
+        private Label label4;
+        private ListBox lstDepartamentos;
+        private Label lblServidor;
+    }
+}
