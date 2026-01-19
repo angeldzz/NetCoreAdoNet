@@ -38,6 +38,7 @@
             label4 = new Label();
             lstDepartamentos = new ListBox();
             lblServidor = new Label();
+            btnReaload = new Button();
             SuspendLayout();
             // 
             // label1
@@ -110,25 +111,36 @@
             // lstDepartamentos
             // 
             lstDepartamentos.FormattingEnabled = true;
-            lstDepartamentos.Location = new Point(135, 27);
+            lstDepartamentos.Location = new Point(135, 30);
             lstDepartamentos.Name = "lstDepartamentos";
-            lstDepartamentos.Size = new Size(288, 229);
+            lstDepartamentos.Size = new Size(482, 349);
             lstDepartamentos.TabIndex = 8;
             // 
             // lblServidor
             // 
             lblServidor.AutoSize = true;
-            lblServidor.Location = new Point(8, 241);
+            lblServidor.Location = new Point(135, 382);
             lblServidor.Name = "lblServidor";
             lblServidor.Size = new Size(63, 15);
             lblServidor.TabIndex = 9;
             lblServidor.Text = "lblServidor";
             // 
+            // btnReaload
+            // 
+            btnReaload.Location = new Point(542, 1);
+            btnReaload.Name = "btnReaload";
+            btnReaload.Size = new Size(75, 23);
+            btnReaload.TabIndex = 10;
+            btnReaload.Text = "reload";
+            btnReaload.UseVisualStyleBackColor = true;
+            btnReaload.Click += btnReaload_Click;
+            // 
             // Form12MensajesServidor
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(441, 274);
+            ClientSize = new Size(629, 411);
+            Controls.Add(btnReaload);
             Controls.Add(lblServidor);
             Controls.Add(lstDepartamentos);
             Controls.Add(label4);
@@ -157,5 +169,6 @@
         private Label label4;
         private ListBox lstDepartamentos;
         private Label lblServidor;
+        private Button btnReaload;
     }
 }
